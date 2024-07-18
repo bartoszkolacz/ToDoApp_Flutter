@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:crud_tutorial/services/firebase.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -50,7 +52,9 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: const Text("Notes"),
+          title: Text("Notes",
+            style: GoogleFonts.getFont('Lato'),
+          ),
         backgroundColor: Colors.white,
       ),
       backgroundColor: Colors.white,
@@ -98,14 +102,18 @@ class _HomePageState extends State<HomePage> {
                     right: 24,
                   ),
                   child: ListTile(
-                  title: Text(noteText),
+                  title:
+                    Text(
+                      noteText,
+                      style: GoogleFonts.getFont('Lato'),
+                    ),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       //update button
                       IconButton(
                       onPressed: () => openNoteBox(docID: docID),
-                      icon: const Icon(Icons.settings),
+                      icon: const Icon(Icons.edit),
                      ),
 
                       //delete button
